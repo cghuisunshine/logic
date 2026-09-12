@@ -1,0 +1,139 @@
+<title>Logic — Files</title>
+<style>
+  :root{
+    --bg:#faf8f4; --panel:#fff; --ink:#1e1b17; --muted:#6f675d; --faint:#a79e92;
+    --line:#e5ded2; --accent:#8a5a2b; --accent-soft:#f2e9dd;
+    --shadow:0 1px 2px rgba(60,45,25,.06),0 8px 24px rgba(60,45,25,.05);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#171512; --panel:#201d19; --ink:#ece6dd; --muted:#a2988a; --faint:#6d6458;
+      --line:#312c25; --accent:#d2a26a; --accent-soft:#2a231a;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#171512; --panel:#201d19; --ink:#ece6dd; --muted:#a2988a; --faint:#6d6458;
+    --line:#312c25; --accent:#d2a26a; --accent-soft:#2a231a;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+  }
+  *{box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);
+    font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    line-height:1.5;padding-block:44px 72px;padding-left:20px;padding-right:20px}
+  .wrap{max-width:760px;margin:0 auto}
+  .eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+    font-family:ui-sans-serif,system-ui,sans-serif;margin-bottom:10px}
+  h1{font-size:clamp(26px,4.4vw,36px);margin:0 0 8px;font-weight:600;letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:15px;margin:0 0 4px}
+  .path{color:var(--faint);font-size:12.5px;margin:8px 0 0;
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+
+  h2{font-family:ui-sans-serif,system-ui,sans-serif;font-size:11px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--accent);font-weight:600;
+    margin:38px 0 12px;display:flex;align-items:center;gap:12px}
+  h2::after{content:"";flex:1;height:1px;background:var(--line)}
+
+  a.card{display:flex;gap:14px;align-items:flex-start;text-decoration:none;color:inherit;
+    background:var(--panel);border:1px solid var(--line);border-radius:12px;
+    padding:14px 16px;margin-bottom:10px;box-shadow:var(--shadow);transition:border-color .12s}
+  a.card:hover{border-color:var(--accent)}
+  a.card:hover .name{color:var(--accent)}
+  .badge{flex:none;width:42px;height:42px;border-radius:9px;display:flex;align-items:center;
+    justify-content:center;font-family:ui-sans-serif,system-ui,sans-serif;font-size:10px;
+    font-weight:700;letter-spacing:.06em;background:var(--accent-soft);color:var(--accent)}
+  .badge.dim{background:transparent;border:1px solid var(--line);color:var(--faint)}
+  .txt{flex:1;min-width:0}
+  .name{font-size:17px;font-weight:600;letter-spacing:-.005em;margin-bottom:2px;
+    overflow-wrap:anywhere}
+  .desc{color:var(--muted);font-size:14.5px}
+  .meta{color:var(--faint);font-size:12px;margin-top:5px;
+    font-family:ui-sans-serif,system-ui,sans-serif}
+  .note{color:var(--faint);font-size:12.5px;text-align:center;margin-top:32px;
+    font-family:ui-sans-serif,system-ui,sans-serif}
+</style>
+
+<div class="wrap">
+  <div class="eyebrow">Folder index</div>
+  <h1>Logic</h1>
+  <p class="sub">Everything in this folder, in one place.</p>
+  <p class="path">~/tutor/logic</p>
+
+  <h2>Textbook</h2>
+
+  <a class="card" href="logic.pdf">
+    <span class="badge">PDF</span>
+    <span class="txt">
+      <span class="name">logic.pdf</span>
+      <div class="desc"><em>Argument: Critical Thinking, Logic and the Fallacies</em>, 2nd ed. —
+        Woods, Irvine &amp; Walton. Opens on two tappable contents pages; 133 bookmarks nested
+        Part → Chapter → section.</div>
+      <div class="meta">390 pages · 21.5 MB · the copy to read</div>
+    </span>
+  </a>
+
+  <a class="card" href="index.html">
+    <span class="badge">HTML</span>
+    <span class="txt">
+      <span class="name">index.html</span>
+      <div class="desc">Contents page for the textbook — every chapter and numbered section,
+        filterable, each entry jumping straight to its page in <code>logic.pdf</code>.</div>
+      <div class="meta">116 links · best opened on a computer</div>
+    </span>
+  </a>
+
+  <h2>Course material</h2>
+
+  <a class="card" href="discussion1.pdf">
+    <span class="badge">PDF</span>
+    <span class="txt">
+      <span class="name">discussion1.pdf</span>
+      <div class="desc">Discussion Activity 1 — arguments from Democritus, Hume, Melissus and
+        others to put into standard form, identifying premises and conclusion.</div>
+      <div class="meta">3 pages · 135 KB</div>
+    </span>
+  </a>
+
+  <h2>Archive</h2>
+
+  <a class="card" href="logic_bookmarked.pdf">
+    <span class="badge dim">PDF</span>
+    <span class="txt">
+      <span class="name">logic_bookmarked.pdf</span>
+      <div class="desc">Earlier version of the textbook: the same 133 bookmarks, but without the
+        clickable contents pages. Superseded by <code>logic.pdf</code>.</div>
+      <div class="meta">388 pages · 21.6 MB</div>
+    </span>
+  </a>
+
+  <a class="card" href="Claude%20outputs/contents.html">
+    <span class="badge dim">HTML</span>
+    <span class="txt">
+      <span class="name">Claude outputs / contents.html</span>
+      <div class="desc">First draft of the contents page, with the old page numbering.
+        Use <code>index.html</code> instead.</div>
+      <div class="meta">28 KB</div>
+    </span>
+  </a>
+
+  <a class="card" href="Claude%20outputs/contents-page-preview.png">
+    <span class="badge dim">PNG</span>
+    <span class="txt">
+      <span class="name">Claude outputs / contents-page-preview.png</span>
+      <div class="desc">Preview image of page 1 of the textbook — the built-in contents page.</div>
+      <div class="meta">131 KB</div>
+    </span>
+  </a>
+
+  <a class="card" href="README.md">
+    <span class="badge dim">MD</span>
+    <span class="txt">
+      <span class="name">README.md</span>
+      <div class="desc">Repository readme.</div>
+      <div class="meta">8 bytes</div>
+    </span>
+  </a>
+
+  <p class="note">Add new files to the folder and they won't appear here automatically —
+    ask and I'll refresh this page.</p>
+</div>
