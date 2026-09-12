@@ -1,0 +1,304 @@
+<title>Argument — Contents</title>
+<style>
+  :root{
+    --bg:#faf8f4; --panel:#fff; --ink:#1e1b17; --muted:#6f675d; --faint:#a79e92;
+    --line:#e5ded2; --accent:#8a5a2b; --accent-soft:#f2e9dd; --shadow:0 1px 2px rgba(60,45,25,.06),0 8px 24px rgba(60,45,25,.05);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#171512; --panel:#201d19; --ink:#ece6dd; --muted:#a2988a; --faint:#6d6458;
+      --line:#312c25; --accent:#d2a26a; --accent-soft:#2a231a; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#171512; --panel:#201d19; --ink:#ece6dd; --muted:#a2988a; --faint:#6d6458;
+    --line:#312c25; --accent:#d2a26a; --accent-soft:#2a231a; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+  }
+  *{box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);
+    font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    line-height:1.5;padding-block:40px 72px;padding-left:20px;padding-right:20px;}
+  .wrap{max-width:820px;margin:0 auto}
+  header{margin-bottom:28px}
+  .eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+    font-family:ui-sans-serif,system-ui,sans-serif;margin-bottom:10px}
+  h1{font-size:clamp(26px,4.4vw,38px);line-height:1.15;margin:0 0 6px;font-weight:600;letter-spacing:-.01em}
+  h1 em{font-style:italic}
+  .byline{color:var(--muted);font-size:15px;margin:0}
+  .meta{color:var(--faint);font-size:13px;margin:10px 0 0;
+    font-family:ui-sans-serif,system-ui,sans-serif}
+
+  .tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;
+    margin:22px 0 26px;font-family:ui-sans-serif,system-ui,sans-serif}
+  input[type=search]{flex:1 1 220px;min-width:0;padding:10px 13px;border-radius:9px;
+    border:1px solid var(--line);background:var(--panel);color:var(--ink);font:inherit;font-size:14px;
+    box-shadow:var(--shadow)}
+  input[type=search]:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+  button{padding:10px 14px;border-radius:9px;border:1px solid var(--line);background:var(--panel);
+    color:var(--muted);font:inherit;font-size:13px;cursor:pointer;box-shadow:var(--shadow);white-space:nowrap}
+  button:hover{color:var(--ink);border-color:var(--accent)}
+
+  section.part{margin:0 0 26px}
+  .part-head{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;
+    font-family:ui-sans-serif,system-ui,sans-serif}
+  .part-head .n{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  .part-head .rule{flex:1;height:1px;background:var(--line)}
+
+  details.ch{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+    margin:0 0 10px;box-shadow:var(--shadow);overflow:hidden}
+  details.ch>summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;
+    align-items:baseline;gap:10px;font-size:17px;font-weight:600;letter-spacing:-.005em}
+  details.ch>summary::-webkit-details-marker{display:none}
+  summary .chev{color:var(--faint);font-size:11px;transition:transform .15s;flex:none;
+    font-family:ui-sans-serif,system-ui,sans-serif}
+  details[open]>summary .chev{transform:rotate(90deg)}
+  summary .st{flex:1;min-width:0}
+  summary .sp{color:var(--faint);font-size:13px;font-family:ui-sans-serif,system-ui,sans-serif;font-weight:400}
+  summary:hover .st{color:var(--accent)}
+  .body{padding:0 16px 12px 38px;border-top:1px solid var(--line);margin-top:2px;padding-top:8px}
+
+  a.row{display:flex;align-items:baseline;gap:8px;text-decoration:none;color:inherit;
+    padding:5px 6px;margin:0 -6px;border-radius:7px;font-size:15px}
+  a.row:hover{background:var(--accent-soft);color:var(--accent)}
+  a.row .t{flex:0 1 auto}
+  a.row .dots{flex:1 1 auto;min-width:14px;border-bottom:1px dotted var(--line);
+    transform:translateY(-4px)}
+  a.row .pg{color:var(--muted);font-variant-numeric:tabular-nums;font-size:14px;
+    font-family:ui-sans-serif,system-ui,sans-serif}
+  a.row .pdf{color:var(--faint);font-size:11px;font-variant-numeric:tabular-nums;
+    font-family:ui-sans-serif,system-ui,sans-serif;width:44px;text-align:right;flex:none}
+  a.row.top{font-size:16px}
+
+  .extras{display:flex;flex-wrap:wrap;gap:4px 16px;margin:8px -6px 0;padding-top:8px;
+    border-top:1px dotted var(--line);font-family:ui-sans-serif,system-ui,sans-serif}
+  .extras a{font-size:12.5px;color:var(--muted);text-decoration:none;padding:3px 6px;border-radius:6px}
+  .extras a:hover{background:var(--accent-soft);color:var(--accent)}
+  .extras a span{color:var(--faint);font-variant-numeric:tabular-nums}
+
+  .plain{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+    padding:10px 16px;box-shadow:var(--shadow)}
+  .legend{color:var(--faint);font-size:12px;margin-top:26px;text-align:center;
+    font-family:ui-sans-serif,system-ui,sans-serif}
+  .empty{display:none;color:var(--muted);text-align:center;padding:40px 0;
+    font-family:ui-sans-serif,system-ui,sans-serif}
+  .hidden{display:none !important}
+  @media (max-width:520px){ a.row .pdf{display:none} }
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Table of Contents</div>
+  <h1><em>Argument</em>: Critical Thinking, Logic and the Fallacies</h1>
+  <p class="byline">John Woods · Andrew Irvine · Douglas Walton — Second Edition</p>
+  <p class="meta">Prentice Hall, 2004 · 388 scanned pages · every entry opens <code>logic_bookmarked.pdf</code> at that page</p>
+</header>
+
+<div class="tools">
+  <input type="search" id="q" placeholder="Filter chapters and sections…" autocomplete="off">
+  <button id="expand">Expand all</button>
+  <button id="collapse">Collapse all</button>
+</div>
+
+<div class="plain" id="front">
+<a class="row top" href="logic_bookmarked.pdf#page=7"><span class="t">Contents</span><span class="dots"></span><span class="pg"></span><span class="pdf">p.7</span></a>
+<a class="row top" href="logic_bookmarked.pdf#page=10"><span class="t">Acknowledgements</span><span class="dots"></span><span class="pg"></span><span class="pdf">p.10</span></a>
+<a class="row top" href="logic_bookmarked.pdf#page=11"><span class="t">A Note Regarding Exercises</span><span class="dots"></span><span class="pg"></span><span class="pdf">p.11</span></a>
+<a class="row top" href="logic_bookmarked.pdf#page=13"><span class="t">Introduction</span><span class="dots"></span><span class="pg"></span><span class="pdf">p.13</span></a>
+</div>
+<section class="part">
+<div class="part-head"><span class="n">Part I</span><span class="n" style="color:var(--muted);letter-spacing:.1em">Arguments</span><span class="rule"></span></div>
+<details class="ch" open><summary><span class="chev">&#9654;</span><span class="st">Chapter 1. The Quarrel</span><span class="sp">1</span></summary>
+<div class="body">
+<a class="row " href="logic_bookmarked.pdf#page=17"><span class="t">1. Arguments, Fallacies, and Logic</span><span class="dots"></span><span class="pg">1</span><span class="pdf">p.17</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=25"><span class="t">2. The Quarrel</span><span class="dots"></span><span class="pg">9</span><span class="pdf">p.25</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=29"><span class="t">3. The Ad Baculum</span><span class="dots"></span><span class="pg">13</span><span class="pdf">p.29</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=31"><span class="t">4. The Ad Hominem</span><span class="dots"></span><span class="pg">15</span><span class="pdf">p.31</span></a>
+<div class="extras"><a href="logic_bookmarked.pdf#page=37">Summary <span>21</span></a><a href="logic_bookmarked.pdf#page=38">Weblinks <span>22</span></a><a href="logic_bookmarked.pdf#page=38">Notes <span>22</span></a></div>
+</div>
+</details>
+<details class="ch" open><summary><span class="chev">&#9654;</span><span class="st">Chapter 2. The Debate</span><span class="sp">24</span></summary>
+<div class="body">
+<a class="row " href="logic_bookmarked.pdf#page=40"><span class="t">1. The Debate</span><span class="dots"></span><span class="pg">24</span><span class="pdf">p.40</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=44"><span class="t">2. Mill&#x27;s Model of Debate</span><span class="dots"></span><span class="pg">28</span><span class="pdf">p.44</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=48"><span class="t">3. A Critique of Mill&#x27;s Model</span><span class="dots"></span><span class="pg">32</span><span class="pdf">p.48</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=50"><span class="t">4. The Ad Populum: Boosterism</span><span class="dots"></span><span class="pg">34</span><span class="pdf">p.50</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=52"><span class="t">5. The Ad Populum: Popularity</span><span class="dots"></span><span class="pg">36</span><span class="pdf">p.52</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=58"><span class="t">6. The Ad Verecundiam</span><span class="dots"></span><span class="pg">42</span><span class="pdf">p.58</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=62"><span class="t">7. Appeals to Mercy and Other Emotive Fallacies</span><span class="dots"></span><span class="pg">46</span><span class="pdf">p.62</span></a>
+<div class="extras"><a href="logic_bookmarked.pdf#page=64">Summary <span>48</span></a><a href="logic_bookmarked.pdf#page=65">Weblinks <span>49</span></a><a href="logic_bookmarked.pdf#page=65">Notes <span>49</span></a></div>
+</div>
+</details>
+<details class="ch" open><summary><span class="chev">&#9654;</span><span class="st">Chapter 3. Dialectic</span><span class="sp">51</span></summary>
+<div class="body">
+<a class="row " href="logic_bookmarked.pdf#page=67"><span class="t">1. Aristotle&#x27;s Basic Rules of Dialectic</span><span class="dots"></span><span class="pg">51</span><span class="pdf">p.67</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=68"><span class="t">2. Eight Revised Rules of Dialectic</span><span class="dots"></span><span class="pg">52</span><span class="pdf">p.68</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=74"><span class="t">3. The Ad Ignorantiam</span><span class="dots"></span><span class="pg">58</span><span class="pdf">p.74</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=79"><span class="t">4. The Fallacy of Complex Question</span><span class="dots"></span><span class="pg">63</span><span class="pdf">p.79</span></a>
+<div class="extras"><a href="logic_bookmarked.pdf#page=83">Summary <span>67</span></a><a href="logic_bookmarked.pdf#page=84">Weblinks <span>68</span></a><a href="logic_bookmarked.pdf#page=84">Notes <span>68</span></a></div>
+</div>
+</details>
+</section>
+<section class="part">
+<div class="part-head"><span class="n">Part II</span><span class="n" style="color:var(--muted);letter-spacing:.1em">Logic</span><span class="rule"></span></div>
+<details class="ch" open><summary><span class="chev">&#9654;</span><span class="st">Chapter 4. Elementary Logic</span><span class="sp">69</span></summary>
+<div class="body">
+<a class="row " href="logic_bookmarked.pdf#page=85"><span class="t">1. Entailment</span><span class="dots"></span><span class="pg">69</span><span class="pdf">p.85</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=88"><span class="t">2. Conjunction, Disjunction, and Negation</span><span class="dots"></span><span class="pg">72</span><span class="pdf">p.88</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=94"><span class="t">3. Conditionals and Biconditionals</span><span class="dots"></span><span class="pg">78</span><span class="pdf">p.94</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=101"><span class="t">4. Testing Arguments for Validity</span><span class="dots"></span><span class="pg">85</span><span class="pdf">p.101</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=105"><span class="t">5. The Truth-Table Test for Validity</span><span class="dots"></span><span class="pg">89</span><span class="pdf">p.105</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=110"><span class="t">6. Fallacies of Relevance</span><span class="dots"></span><span class="pg">94</span><span class="pdf">p.110</span></a>
+<div class="extras"><a href="logic_bookmarked.pdf#page=111">Summary <span>95</span></a><a href="logic_bookmarked.pdf#page=112">Weblinks <span>96</span></a><a href="logic_bookmarked.pdf#page=112">Notes <span>96</span></a></div>
+</div>
+</details>
+<details class="ch" open><summary><span class="chev">&#9654;</span><span class="st">Chapter 5. Formal and Informal Logic</span><span class="sp">97</span></summary>
+<div class="body">
+<a class="row " href="logic_bookmarked.pdf#page=113"><span class="t">1. Logical Form</span><span class="dots"></span><span class="pg">97</span><span class="pdf">p.113</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=118"><span class="t">2. Formal Logic</span><span class="dots"></span><span class="pg">102</span><span class="pdf">p.118</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=120"><span class="t">3. Begging the Question</span><span class="dots"></span><span class="pg">104</span><span class="pdf">p.120</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=128"><span class="t">4. Equivocation and Amphiboly</span><span class="dots"></span><span class="pg">112</span><span class="pdf">p.128</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=132"><span class="t">5. The Paradox of the Liar</span><span class="dots"></span><span class="pg">116</span><span class="pdf">p.132</span></a>
+<div class="extras"><a href="logic_bookmarked.pdf#page=136">Summary <span>120</span></a><a href="logic_bookmarked.pdf#page=136">Weblinks <span>120</span></a><a href="logic_bookmarked.pdf#page=136">Notes <span>120</span></a></div>
+</div>
+</details>
+<details class="ch" open><summary><span class="chev">&#9654;</span><span class="st">Chapter 6. Formal Deductive Systems</span><span class="sp">122</span></summary>
+<div class="body">
+<a class="row " href="logic_bookmarked.pdf#page=138"><span class="t">1. Formal Systems</span><span class="dots"></span><span class="pg">122</span><span class="pdf">p.138</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=139"><span class="t">2. System P</span><span class="dots"></span><span class="pg">123</span><span class="pdf">p.139</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=147"><span class="t">3. Working in System P</span><span class="dots"></span><span class="pg">131</span><span class="pdf">p.147</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=156"><span class="t">4. Evaluating System P</span><span class="dots"></span><span class="pg">140</span><span class="pdf">p.156</span></a>
+<div class="extras"><a href="logic_bookmarked.pdf#page=162">Summary <span>146</span></a><a href="logic_bookmarked.pdf#page=163">Weblinks <span>147</span></a><a href="logic_bookmarked.pdf#page=163">Notes <span>147</span></a></div>
+</div>
+</details>
+<details class="ch" open><summary><span class="chev">&#9654;</span><span class="st">Chapter 7. Non-Classical Propositional Logics</span><span class="sp">148</span></summary>
+<div class="body">
+<a class="row " href="logic_bookmarked.pdf#page=164"><span class="t">1. System RP</span><span class="dots"></span><span class="pg">148</span><span class="pdf">p.164</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=169"><span class="t">2. Evaluating System RP</span><span class="dots"></span><span class="pg">153</span><span class="pdf">p.169</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=173"><span class="t">3. Modal Propositional Logics</span><span class="dots"></span><span class="pg">157</span><span class="pdf">p.173</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=180"><span class="t">4. Epistemic and Deontic Propositional Logics</span><span class="dots"></span><span class="pg">164</span><span class="pdf">p.180</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=184"><span class="t">5. Multi-valued Propositional Logics</span><span class="dots"></span><span class="pg">168</span><span class="pdf">p.184</span></a>
+<div class="extras"><a href="logic_bookmarked.pdf#page=190">Summary <span>174</span></a><a href="logic_bookmarked.pdf#page=190">Weblinks <span>174</span></a><a href="logic_bookmarked.pdf#page=191">Notes <span>175</span></a></div>
+</div>
+</details>
+<details class="ch" open><summary><span class="chev">&#9654;</span><span class="st">Chapter 8. Term Logic</span><span class="sp">176</span></summary>
+<div class="body">
+<a class="row " href="logic_bookmarked.pdf#page=192"><span class="t">1. Aristotle&#x27;s Categorical Propositions</span><span class="dots"></span><span class="pg">176</span><span class="pdf">p.192</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=197"><span class="t">2. Immediate Inference</span><span class="dots"></span><span class="pg">181</span><span class="pdf">p.197</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=203"><span class="t">3. The Syllogism</span><span class="dots"></span><span class="pg">187</span><span class="pdf">p.203</span></a>
+<div class="extras"><a href="logic_bookmarked.pdf#page=213">Summary <span>197</span></a><a href="logic_bookmarked.pdf#page=213">Weblinks <span>197</span></a><a href="logic_bookmarked.pdf#page=213">Notes <span>197</span></a></div>
+</div>
+</details>
+<details class="ch" open><summary><span class="chev">&#9654;</span><span class="st">Chapter 9. Predicate Logic</span><span class="sp">198</span></summary>
+<div class="body">
+<a class="row " href="logic_bookmarked.pdf#page=214"><span class="t">1. Motivating Predicate Logic</span><span class="dots"></span><span class="pg">198</span><span class="pdf">p.214</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=222"><span class="t">2. Extending System P</span><span class="dots"></span><span class="pg">206</span><span class="pdf">p.222</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=228"><span class="t">3. Working in System PL</span><span class="dots"></span><span class="pg">212</span><span class="pdf">p.228</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=231"><span class="t">4. Extending System PL</span><span class="dots"></span><span class="pg">215</span><span class="pdf">p.231</span></a>
+<div class="extras"><a href="logic_bookmarked.pdf#page=237">Summary <span>221</span></a><a href="logic_bookmarked.pdf#page=237">Weblinks <span>221</span></a><a href="logic_bookmarked.pdf#page=237">Notes <span>221</span></a></div>
+</div>
+</details>
+<details class="ch" open><summary><span class="chev">&#9654;</span><span class="st">Chapter 10. Inductive Logic and Scientific Reasoning</span><span class="sp">222</span></summary>
+<div class="body">
+<a class="row " href="logic_bookmarked.pdf#page=238"><span class="t">1. Induction: Narrow and Wide</span><span class="dots"></span><span class="pg">222</span><span class="pdf">p.238</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=240"><span class="t">2. Inductive Logic</span><span class="dots"></span><span class="pg">224</span><span class="pdf">p.240</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=245"><span class="t">3. The Elements of Probability Theory</span><span class="dots"></span><span class="pg">229</span><span class="pdf">p.245</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=252"><span class="t">4. Hasty Generalization and Related Fallacies</span><span class="dots"></span><span class="pg">236</span><span class="pdf">p.252</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=259"><span class="t">5. A Causal Fallacy</span><span class="dots"></span><span class="pg">243</span><span class="pdf">p.259</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=260"><span class="t">6. Causal Reasoning</span><span class="dots"></span><span class="pg">244</span><span class="pdf">p.260</span></a>
+<div class="extras"><a href="logic_bookmarked.pdf#page=263">Summary <span>247</span></a><a href="logic_bookmarked.pdf#page=264">Weblinks <span>248</span></a><a href="logic_bookmarked.pdf#page=264">Notes <span>248</span></a></div>
+</div>
+</details>
+</section>
+<section class="part">
+<div class="part-head"><span class="n">Part III</span><span class="n" style="color:var(--muted);letter-spacing:.1em">Applying Logic to Arguments</span><span class="rule"></span></div>
+<details class="ch" open><summary><span class="chev">&#9654;</span><span class="st">Chapter 11. Economic Reasoning</span><span class="sp">250</span></summary>
+<div class="body">
+<a class="row " href="logic_bookmarked.pdf#page=266"><span class="t">1. The Fallacies of Composition and Division</span><span class="dots"></span><span class="pg">250</span><span class="pdf">p.266</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=269"><span class="t">2. Analytical Remarks about Composition and Division</span><span class="dots"></span><span class="pg">253</span><span class="pdf">p.269</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=271"><span class="t">3. Expected Utility, Sure-thing, and Minimax Principles</span><span class="dots"></span><span class="pg">255</span><span class="pdf">p.271</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=277"><span class="t">4. Group Decisions and the Prisoner&#x27;s Dilemma</span><span class="dots"></span><span class="pg">261</span><span class="pdf">p.277</span></a>
+<div class="extras"><a href="logic_bookmarked.pdf#page=281">Summary <span>265</span></a><a href="logic_bookmarked.pdf#page=282">Weblinks <span>266</span></a><a href="logic_bookmarked.pdf#page=282">Notes <span>266</span></a></div>
+</div>
+</details>
+<details class="ch" open><summary><span class="chev">&#9654;</span><span class="st">Chapter 12. Legal Reasoning</span><span class="sp">268</span></summary>
+<div class="body">
+<a class="row " href="logic_bookmarked.pdf#page=284"><span class="t">1. Burden of Proof versus Standard of Proof</span><span class="dots"></span><span class="pg">268</span><span class="pdf">p.284</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=287"><span class="t">2. Evidence, Testimony, and Expert Opinion</span><span class="dots"></span><span class="pg">271</span><span class="pdf">p.287</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=293"><span class="t">3. Legal Precedent and Analogical Argument</span><span class="dots"></span><span class="pg">277</span><span class="pdf">p.293</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=298"><span class="t">4. Legal Facts and Legal Justification</span><span class="dots"></span><span class="pg">282</span><span class="pdf">p.298</span></a>
+<div class="extras"><a href="logic_bookmarked.pdf#page=301">Summary <span>285</span></a><a href="logic_bookmarked.pdf#page=301">Weblinks <span>285</span></a><a href="logic_bookmarked.pdf#page=302">Notes <span>286</span></a></div>
+</div>
+</details>
+<details class="ch" open><summary><span class="chev">&#9654;</span><span class="st">Chapter 13. Artificial Intelligence</span><span class="sp">287</span></summary>
+<div class="body">
+<a class="row " href="logic_bookmarked.pdf#page=303"><span class="t">1. Artificial Intelligence, Logic, and Computability</span><span class="dots"></span><span class="pg">287</span><span class="pdf">p.303</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=307"><span class="t">2. Expert Systems</span><span class="dots"></span><span class="pg">291</span><span class="pdf">p.307</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=310"><span class="t">3. Plausibility Screening</span><span class="dots"></span><span class="pg">294</span><span class="pdf">p.310</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=314"><span class="t">4. Plausible Argument</span><span class="dots"></span><span class="pg">298</span><span class="pdf">p.314</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=316"><span class="t">5. Theories of Belief Revision</span><span class="dots"></span><span class="pg">300</span><span class="pdf">p.316</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=320"><span class="t">6. Can Machines Think?</span><span class="dots"></span><span class="pg">304</span><span class="pdf">p.320</span></a>
+<div class="extras"><a href="logic_bookmarked.pdf#page=323">Summary <span>307</span></a><a href="logic_bookmarked.pdf#page=324">Weblinks <span>308</span></a><a href="logic_bookmarked.pdf#page=324">Notes <span>308</span></a></div>
+</div>
+</details>
+<details class="ch" open><summary><span class="chev">&#9654;</span><span class="st">Chapter 14. Issues in the Philosophy of Logic</span><span class="sp">310</span></summary>
+<div class="body">
+<a class="row " href="logic_bookmarked.pdf#page=326"><span class="t">1. Choosing the Right Logic</span><span class="dots"></span><span class="pg">310</span><span class="pdf">p.326</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=330"><span class="t">2. Paraconsistent Logics</span><span class="dots"></span><span class="pg">314</span><span class="pdf">p.330</span></a>
+<a class="row " href="logic_bookmarked.pdf#page=337"><span class="t">3. The Enlightenment Ideal</span><span class="dots"></span><span class="pg">321</span><span class="pdf">p.337</span></a>
+<div class="extras"><a href="logic_bookmarked.pdf#page=340">Summary <span>324</span></a><a href="logic_bookmarked.pdf#page=340">Weblinks <span>324</span></a><a href="logic_bookmarked.pdf#page=340">Notes <span>324</span></a></div>
+</div>
+</details>
+</section>
+<div class="part-head"><span class="n">End matter</span><span class="rule"></span></div>
+<div class="plain" id="back">
+<a class="row top" href="logic_bookmarked.pdf#page=342"><span class="t">Appendix: Summary of Fallacies</span><span class="dots"></span><span class="pg">326</span><span class="pdf">p.342</span></a>
+<a class="row top" href="logic_bookmarked.pdf#page=348"><span class="t">Selected Readings</span><span class="dots"></span><span class="pg">332</span><span class="pdf">p.348</span></a>
+<a class="row top" href="logic_bookmarked.pdf#page=354"><span class="t">Solutions</span><span class="dots"></span><span class="pg">338</span><span class="pdf">p.354</span></a>
+<a class="row top" href="logic_bookmarked.pdf#page=380"><span class="t">Name Index</span><span class="dots"></span><span class="pg">364</span><span class="pdf">p.380</span></a>
+<a class="row top" href="logic_bookmarked.pdf#page=381"><span class="t">Subject Index</span><span class="dots"></span><span class="pg">365</span><span class="pdf">p.381</span></a>
+</div>
+<p class="empty" id="empty">No entries match that filter.</p>
+<p class="legend">Right-hand numbers are the book's printed pages; the small grey number is the page in the PDF file.</p>
+</div>
+
+<script>
+  const q = document.getElementById('q');
+  const chs = [...document.querySelectorAll('details.ch')];
+  const empty = document.getElementById('empty');
+  const plains = [...document.querySelectorAll('.plain')];
+
+  function filter(){
+    const v = q.value.trim().toLowerCase();
+    let any = false;
+    for (const d of chs){
+      const rows = [...d.querySelectorAll('a.row, .extras a')];
+      const head = d.querySelector('.st').textContent.toLowerCase();
+      const headHit = !v || head.includes(v);
+      let hits = 0;
+      for (const r of rows){
+        const hit = !v || headHit || r.textContent.toLowerCase().includes(v);
+        r.classList.toggle('hidden', !hit);
+        if (hit) hits++;
+      }
+      const show = !v || headHit || hits > 0;
+      d.classList.toggle('hidden', !show);
+      if (show){ any = true; if (v) d.open = true; }
+    }
+    for (const p of plains){
+      let h = 0;
+      for (const r of p.querySelectorAll('a.row')){
+        const hit = !v || r.textContent.toLowerCase().includes(v);
+        r.classList.toggle('hidden', !hit); if (hit) h++;
+      }
+      p.classList.toggle('hidden', h === 0);
+      if (h) any = true;
+    }
+    for (const s of document.querySelectorAll('section.part')){
+      s.classList.toggle('hidden', ![...s.querySelectorAll('details.ch')].some(d => !d.classList.contains('hidden')));
+    }
+    empty.style.display = any ? 'none' : 'block';
+  }
+  q.addEventListener('input', filter);
+  document.getElementById('expand').onclick = () => chs.forEach(d => d.open = true);
+  document.getElementById('collapse').onclick = () => chs.forEach(d => d.open = false);
+</script>
